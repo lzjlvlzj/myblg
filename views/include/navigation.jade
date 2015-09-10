@@ -1,0 +1,38 @@
+//
+   Created by GeoStar on 2015/8/19.
+
+nav(role='navigation').navbar.navbar-inverse
+   div.navbar-header
+      button(type='button',data-toggle='collapse', data-target='#blog-navbar-collapse').navbar-toggle
+          span.sr-only  change
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+      a.navbar-brand ACK'S测试 BlOG
+   div(id='blog-navbar-collapse').collapse.navbar-collapse.navbar-right
+
+
+       ul(id='blog-navbar-ul').nav.navbar-nav
+           li.active
+               a(href='/') Home
+           li
+               a(href='#') SVN
+           li.dropdown
+               a(href='#', data-toggle='dropdown').dropdown-toggle JAVA
+                   b.caret
+               ul.dropdown-menu
+                   li
+                      a(href='#') jmeter
+                   li
+                      a(href='#') EJB
+                   li
+                       a(href='#') Jasper Report
+                   li
+                       a(href='#').divider 分离的链接
+                   li
+                       a(href='#').divider
+                   li
+                       a(href='#') 另一个链接
+
+script(src='/javascripts/util.js',type='text/javascript')
+script(src='/javascripts/navigation.js',type='text/javascript')

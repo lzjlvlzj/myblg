@@ -1,0 +1,25 @@
+doctype html
+html
+    head
+        meta(http-equiv='Content-Type',content='text/html; charset=utf-8')
+        meta(name="viewport",content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no")
+        title= title
+        link(rel='stylesheet', href='/3part/bootstrap/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/stylesheets/base.css')
+        script(src='/3part/jQuery-2.1.4.min.js',type='text/javascript')
+    body
+        div.container
+            header
+                include ./include/navigation
+            section
+                div
+                    ul(id='nav_1').breadcrumb.sub-navigator
+                        li(id='home-li')
+                            i.glyphicon.glyphicon-home
+                            a(href='/') 首页
+
+            block content
+            footer
+                include ./include/footer
+        script(src='/3part/bootstrap/js/bootstrap.min.js',type='text/javascript')
+        script(src='/javascripts/system.js',type='text/javascript')
