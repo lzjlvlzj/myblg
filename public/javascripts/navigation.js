@@ -63,7 +63,16 @@ Navigation.getParents = function(obj,coll){
         Navigation.getParents(o,coll);
     }
 };
-
+Navigation.getObjById = function(id){
+    var coll = Navigation.coll;
+    for(var i = 0; i <　coll.length; i++){
+        var item = coll[i];
+        if(item._id == id){
+            return item.url;
+        }
+    }
+    return null;
+};
 Navigation.getObjByName = function(name,coll){
     for(var i = 0; i <　coll.length; i++){
         var item = coll[i];
@@ -97,6 +106,7 @@ Navigation.list = function(){
         contentType: "application/x-www-form-urlencoded; charset=utf-8",
         success : function(resObj) {
             if( resObj ){
+                Navigation.coll = resObj;
                 Navigation.subHead(resObj);
                 Navigation.show(resObj);
             }

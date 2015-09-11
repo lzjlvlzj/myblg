@@ -60,7 +60,7 @@ Aside.findHot = function(param){
         success : function(resObj) {
             if( resObj ){
                 var div = $("#article-hot");
-                Aside.show(resObj,div,url);
+                Aside.show(resObj,div,param);
             }
         }
     });
@@ -72,7 +72,9 @@ Aside.show = function(resObj,div,location) {
     for (var i = 0; i < resObj.length; i++) {
         var item = resObj[i];
         var li = $("<li>");
-        var url = location + "/" + item._id;
+        var url = "#";
+        url = Navigation.getObjById(item.category);
+        url = url + "/" + item._id;
         var a = $("<a href='" + url + "'>");
         a.append(item.title);
         li.append(a);
