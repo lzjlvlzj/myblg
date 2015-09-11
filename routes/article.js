@@ -5,12 +5,20 @@
 var express = require('express');
 var article = express();
 var ArticleService = require("../service/ArticleService");
+
+
 /**
  * 首页
  * */
 article.get("/",function(req,res){
     var currentPage = req.param("currentPage");
     res.render('common', { title: "ACK'S BLOG" });
+});
+/**
+ * 首页
+ * */
+article.get("/about",function(req,res){
+    res.render('about', { title: "关于" });
 });
 /**
  * 测试
@@ -90,12 +98,13 @@ article.post("/article/hot",function(req,res){
 /**
  * 一级菜单
  * */
-article.get("/:category",function(req,res){
+article.get("/:category",function(req,res,next){
     var category = req.param("category");
     var url = "/" + category;
     var flag = ArticleService.checkUrl(url);
     if(!flag){
         next();
+        return;
     }
     res.render('common', { title: category });
 });
@@ -130,6 +139,7 @@ article.get("/:category/:sub/:id",function(req,res,next){
     var flag = ArticleService.checkUrl(url);
     if(!flag){
         next();
+        return;
     }
     ArticleService.findById(data,function(err,doc){
         if(err || !doc){
