@@ -115,7 +115,10 @@ BaseDao.prototype.findById = function(model,id,callback){
  * 查询最新
  * */
 BaseDao.prototype.findLast = function(model,data,callback){
-    return model.find(data).select(data.returnField).exec(callback);
+    return model.findOne(data.conditions)
+        .select(data.returnField)
+        .sort(data.sortField)
+        .exec(callback);
 };
 
 BaseDao.prototype.update = function(model,data,callback){
