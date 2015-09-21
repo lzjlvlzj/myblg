@@ -91,7 +91,6 @@ var BlgUtil = {
             var newPath = option.uploadDir + "/" + rt.name;
             console.log(newPath);
             fs.renameSync(oldPath, newPath);  //重命名
-            rt.state = "SUCCESS";
             console.log("文件" + rt.originalName + "上传完毕!");
             option.callback(rt);
         });
