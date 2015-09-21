@@ -17,7 +17,6 @@ articleController.get("/article/ui",function(req, res){
     res.render("back/article",{data : data});*/
     //查询分类
     ArticleService.findCategories({},function(err,doc){
-        console.log(doc);
         //返回页面视图
         var data = BlgUtil.assembleCategories(doc);
         res.render("back/article",{data : data});

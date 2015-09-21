@@ -18,6 +18,7 @@ uploadController.post("/img/upload",function(req,res){
     var option = {};
     option.path =  BlgUtil.getDateString();
     option.callback=function(rt){
+        rt.state = "SUCCESS";
         //res.json(rt);//这个不可以为什么? image.js eval()
         res.send(JSON.stringify(rt));
     };
