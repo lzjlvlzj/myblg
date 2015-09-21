@@ -1,0 +1,16 @@
+//
+   Created by GeoStar on 2015/9/21.
+
+extends back
+block content
+   div.box.box-primary
+      div.box-header  文章创建页面
+      div.box-body
+         form(role='form',id='moodForm')
+            div.form-group
+               label 内容
+               include ../include/common/editor
+      div.box-footer
+         button(id='submit-btn').btn.btn-primary 提交
+
+   script(src='/javascripts/back/mood.js',type='text/javascript')

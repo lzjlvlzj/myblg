@@ -3,9 +3,11 @@
  */
 var Category = require('../entity/Category');
 var Article = require('../entity/Article');
+var Mood = require('../entity/Mood');
 var Entities = {
     "Category" : Category,
-    "Article" : Article
+    "Article" : Article,
+    "Mood" : Mood
 };
 
 module.exports = Entities;
