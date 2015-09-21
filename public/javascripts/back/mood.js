@@ -3,9 +3,10 @@
  */
 
 var  SysMood = {};
-
-$('#bootstrap-editor').wysiwyg();
-
+//$('#bootstrap-editor').wysiwyg();
+SysMood.init = function(){
+    $("#submit-btn").click(SysMood.add);
+};
 SysMood.add = function(){
     var data = {};
     data.content = $('#bootstrap-editor').html();
@@ -25,3 +26,7 @@ SysMood.add = function(){
         }
     });
 };
+
+$(document).ready(function(){
+    SysMood.init();
+});

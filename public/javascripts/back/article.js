@@ -15,8 +15,14 @@ SysArticle.init = function(){
 //$("#categories")
 
 SysArticle.add = function(){
-    var data = $("#articleForm").serialize();
+    //var data = $("#articleForm").serialize();
+    var data = {};
+    data.title = $("#title").val();
+    data.introduction = $("#introduction").val();
+    data.categories = $("#categories").val();
+    data.content = um.getContent();
     var url = "/back/cms/article/add";
+
     $.ajax({
         url:url,
         type:"post",

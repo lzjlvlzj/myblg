@@ -20,15 +20,11 @@ Aside.init = function(){
         //最热
         Aside.findHot(url);
     }
+    Aside.findMood();
 
 };
-/**
- * 查询最新
- * */
-Aside.findLast = function(param){
-    var url = "/article/last";
-    var data = {};
-    data.url = param;
+
+Aside.request = function(data,url,callback){
     $.ajax({
         url:url,
         type:"post",
@@ -37,36 +33,13 @@ Aside.findLast = function(param){
         contentType: "application/x-www-form-urlencoded; charset=utf-8",
         success : function(resObj) {
             if( resObj ){
-                var div = $("#article-last");
-                Aside.show(resObj,div,param);
+                callback(resObj);
             }
         }
     });
 };
 
-/**
- * 查询最热
- * */
-Aside.findHot = function(param){
-    var url = "/article/hot";
-    var data = {};
-    data.url = param;
-    $.ajax({
-        url:url,
-        type:"post",
-        data:data,
-        dataType:'json',
-        contentType: "application/x-www-form-urlencoded; charset=utf-8",
-        success : function(resObj) {
-            if( resObj ){
-                var div = $("#article-hot");
-                Aside.show(resObj,div,param);
-            }
-        }
-    });
-};
-
-Aside.show = function(resObj,div,location) {
+Aside.showArticle = function(resObj,div,location) {
     div.empty();
     var ul = $("<ul class='nav nav-pills nav-stacked' >");
     for (var i = 0; i < resObj.length; i++) {
@@ -81,6 +54,43 @@ Aside.show = function(resObj,div,location) {
         ul.append(li);
     }
     div.append(ul);
+};
+/**
+ * 查询最新
+ * */
+Aside.findLast = function(param){
+    var url = "/article/last";
+    var data = {};
+    data.url = param;
+    Aside.request(data,url,function(resObj){
+        var div = $("#article-last");
+        Aside.showArticle(resObj,div,param);
+    });
+};
+
+/**
+ * 查询最热
+ * */
+Aside.findHot = function(param){
+    var url = "/article/hot";
+    var data = {};
+    data.url = param;
+    Aside.request(data,url,function(resObj){
+        var div = $("#article-hot");
+        Aside.showArticle(resObj,div,param);
+    });
+};
+/**
+ * 每天来一句
+ * */
+Aside.showMood = function(resObj){
+    $("#mood").empty().html(resObj.content);
+};
+
+Aside.findMood = function(){
+    var url = "/mood/one";
+    var data = {};
+    Aside.request(data,url,Aside.showMood);
 };
 
 $(document).ready(function(){
