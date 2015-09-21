@@ -5,3 +5,5 @@ var Mood = {
     content : {type : String, default : "开心每一天"},
     createDate : {type: Date, default: Date.now}
 };
+
+module.exports = Mood;
