@@ -9,6 +9,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 //
 var categories = require('./routes/categories');
+var mood = require('./routes/mood');
 var article = require('./routes/article');
 /*
 var life = require('./routes/life');
@@ -18,7 +19,9 @@ var about = require('./routes/about');
 */
 //back
 var categoryController = require('./routes/back/CategoryController');
+var moodController = require('./routes/back/MoodController');
 var articleController = require('./routes/back/ArticleController');
+var uploadController = require('./routes/back/UploadController');
 var app = express();
 
 // view engine setup
@@ -45,6 +48,7 @@ app.use('/', routes);
 app.use('/users', users);
 //categories
 app.use('/', categories);
+app.use('/',mood);
 app.use('/',article);
 //app.use('/life',life);
 //app.use('/culture',culture);
@@ -53,7 +57,10 @@ app.use('/',article);
 
 //-----------------back------------------------------//
 app.use('/back/cms',categoryController);
+app.use('/back/cms',moodController);
 app.use('/back/cms',articleController);
+app.use('/back/cms',uploadController);
+
 //---------------------------------------------------//
 
 
