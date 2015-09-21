@@ -8,11 +8,15 @@ var Config = {
       password : "",
       host : "192.9.104.125",
       port : "27081",
-      dbName : "blg"
+      //dbName : "blg"//BDNlCYzrvoEbYRMObznF
+      dbName : "blg"//
    },
    //上传路径
-   uploadPath : {
-      imgPath : "",
+   upload : {
+      basePath: "public/upload",
+      img : {
+         maxFieldsSize : 2 * 1024 * 1024                            //大小限制
+      },
       docPath : "",
       videoPath : ""
    },
