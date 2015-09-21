@@ -2,6 +2,8 @@
    Created by GeoStar on 2015/8/26.
 
 extends back
+block css
+    link(href="/3part/editor/themes/default/css/umeditor.css" ,type="text/css", rel="stylesheet")
 block content
      div.box.box-primary
          div.box-header  文章创建页面
@@ -22,13 +24,18 @@ block content
                                      option(value="#{item._id}-#{item.url}") #{item.name}
                  div.form-group
                      label 标题
-                     input(type='text',name='title',placeholder='文章标题').form-control
+                     input(id='title', type='text',name='title',placeholder='文章标题').form-control
                  div.form-group
                      label 简介
-                     textarea(rows='3',name='introduction',placeholder='文章简介').form-control
+                     textarea(id='introduction',rows='3',name='introduction',placeholder='文章简介').form-control
                  div.form-group
-                     label 文章内容
-                     textarea(rows='3',name='content',placeholder='文章内容').form-control
+                     label 违章内容
+                     script(id="editor",type="text/plain",style="width: 100%;")
+                     //div(id="editor", style="overflow: scroll; max-height: 300px;")
+
          div.box-footer
              button(id='submit-btn').btn.btn-primary 提交
-     script(src='/javascripts/back/article.js',type='text/javascript')
+         script(type="text/javascript",src="/3part/editor/umeditor.config.js")
+         script(type="text/javascript",src="/3part/editor/umeditor.min.js")
+         script(type="text/javascript",src="/3part/editor/lang/zh-cn/zh-cn.js")
+         script(src='/javascripts/back/article.js',type='text/javascript')
