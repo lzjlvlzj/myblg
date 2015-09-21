@@ -60,7 +60,7 @@ var ArticleService = {
     },
     findAside : function(data,callback){
         //返回字段
-        data.returnField = "title";
+        data.returnField = "title category";
         //查询条件
         data.conditions = {};
         //显示条数

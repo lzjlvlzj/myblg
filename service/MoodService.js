@@ -11,6 +11,9 @@ var MoodService = {
     add : function(data,callback){
         var entity = new MoodDao.model(data);
         return md.save(entity,callback);
+    },
+    findLast : function(data,callback){
+        return md.findLast(MoodDao.model,data,callback);
     }
 };
 
