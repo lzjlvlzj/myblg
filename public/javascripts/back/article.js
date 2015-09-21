@@ -3,6 +3,9 @@
  */
 
 var SysArticle = {};
+var um = UM.getEditor('editor');
+//var ue = UE.getEditor('editor');
+//$('#bootstrap-editor').wysiwyg();
 $(document).ready(function(){
     SysArticle.init();
 });
