@@ -12,13 +12,13 @@ var ArticleService = require("../service/ArticleService");
  * */
 article.get("/",function(req,res){
     var currentPage = req.param("currentPage");
-    res.render('common', { title: "ACK'S BLOG" });
+    res.render('common', { title: "个人博客-IT技术分享个人博客网站-首页" });
 });
 /**
  * 首页
  * */
 article.get("/about",function(req,res){
-    res.render('about', { title: "关于" });
+    res.render('about', { title: "个人博客-IT技术分享个人博客网站-关于" });
 });
 /**
  * 测试
