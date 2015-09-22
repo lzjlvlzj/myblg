@@ -33,13 +33,29 @@ var BlgUtil = {
         console.log(rt);
         return rt;
     },
+    getDateStr : function(time){
+        var d = new Date(time);
+        var year = d.getFullYear();
+        var month = d.getMonth() + 1;
+        var day = d.getDate();
+        var h = d.getHours();
+        var m = d.getMinutes();
+        var s = d.getSeconds();
+        var rt = year + "-"
+                 + month + "-"
+                 + day + " "
+                 + h + ":"
+                 + m +":"
+                 + s;
+
+        return rt;
+    },
     getDateString : function(){
         var d = new Date();
         var year = d.getFullYear();
         var month = d.getMonth() + 1;
         var day = d.getDate();
         var rt = year + "-" + month + "-" + day;
-        console.log(rt);
         return rt;
 
     },
