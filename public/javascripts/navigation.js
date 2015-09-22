@@ -63,6 +63,10 @@ Navigation.getParents = function(obj,coll){
         Navigation.getParents(o,coll);
     }
 };
+//*************
+// Navigation.coll 这个是一个bug (异步操作)
+//
+// ************
 Navigation.getObjById = function(id){
     var coll = Navigation.coll;
     for(var i = 0; i <　coll.length; i++){
@@ -96,6 +100,16 @@ Navigation.getObjByUrl = function(url, coll){
  * 导航
  * */
 Navigation.list = function(){
+    Navigation.all(function(resObj){
+        if( resObj ){
+            Navigation.coll = resObj;
+            Navigation.subHead(resObj);
+            Navigation.show(resObj);
+        }
+    });
+};
+
+Navigation.all = function(callback){
     var url = "/category/list";
     var data = {};
     $.ajax({
@@ -106,13 +120,12 @@ Navigation.list = function(){
         contentType: "application/x-www-form-urlencoded; charset=utf-8",
         success : function(resObj) {
             if( resObj ){
-                Navigation.coll = resObj;
-                Navigation.subHead(resObj);
-                Navigation.show(resObj);
+                callback(resObj);
             }
         }
     });
 };
+
 Navigation.assemble = function(resObj){
     if(!util){
         return false;
