@@ -21,6 +21,7 @@ SysArticle.add = function(){
     data.introduction = $("#introduction").val();
     data.categories = $("#categories").val();
     data.content = um.getContent();
+
     var url = "/back/cms/article/add";
 
     $.ajax({

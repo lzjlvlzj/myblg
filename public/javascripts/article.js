@@ -99,7 +99,7 @@ function getBoxBody(item,categories){
     var boxBody = $("<div class='box-body'>");
     var rowDiv = $("<div class='row'>");
     var leftDiv = $("<div class='col-sm-4'>");
-    var rightDiv = $("<div class='col-sm-4'>");
+    var rightDiv = $("<div class='col-sm-8'>");
     var img = $("<img src='" + item.img + "'/>");
     leftDiv.append(img);
     var p = $("<p>");
@@ -118,10 +118,11 @@ function getBoxFooter(item,categories){
     var categoryDiv = $("<div class='col-sm-5'>");
     var visitsDiv = $("<div class='col-sm-2'>");
     var timeI = $("<i class='glyphicon glyphicon-calendar'>");
-    var visitI = $("<i class='glyphicon glyphicon-heart'>");
+    var visitI = $("<i class='glyphicon glyphicon-eye-open'>");
     var categoryA = $("<a class='category' href='#'></a>");
     timeDiv.append(timeI);
     var time = item.createDate;
+    time = util.date(time,"yyyy-MM-dd");
     timeDiv.append(time);
     for(var i = 0; i <　categories.length; i++){
         var category = categories[i];
