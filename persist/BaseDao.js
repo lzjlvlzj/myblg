@@ -8,8 +8,8 @@ var Entities = require('../common/Entities');
 var options = {
     db: { native_parser: true },
     server: { poolSize: 5 },
-    user: Config.user,
-    pass: Config.password
+    user: Config.db.user,
+    pass: Config.db.password
 };
 
 var db = mongoose.createConnection();
