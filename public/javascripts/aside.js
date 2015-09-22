@@ -46,8 +46,8 @@ Aside.showArticle = function(resObj,div,location) {
         var item = resObj[i];
         var li = $("<li>");
         var url = "#";
-        url = Navigation.getObjById(item.category);
-        url = url + "/" + item._id;
+        //url = Navigation.getObjById(item.category);
+        url = item.baseUrl + "/" + item._id;
         var a = $("<a href='" + url + "'>");
         a.append(item.title);
         li.append(a);
