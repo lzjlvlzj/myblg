@@ -6,6 +6,7 @@ var ad = new ArticleDao.curdOption();
 var CategoryService = require("./CategoryService");
 var Config = require('../common/Config');
 var Page = require('../common/Page');
+var BlgUtil = require('../common/BlgUtil');
 
 var ArticleService = {
     add : function(data, callback){
@@ -42,6 +43,12 @@ var ArticleService = {
                     return;
                 }
                 doc.visits = doc.visits + 1;
+                var time = BlgUtil.getDateStr(doc.createDate);
+                /**
+                 * 这里不知道为什么 doc.createDate 被重新赋值成time 后页面上的值没改变
+                 * */
+                doc.createDate = time;
+                doc.time = time;
                 callback(error,doc);
             });
         });
