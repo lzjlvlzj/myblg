@@ -41,6 +41,7 @@ articleController.post("/article/add",function(req, res){
     data.content = content;
     data.category = category;
     data.baseUrl = baseUrl;
+    //data.createDate = new Date().getTime();
     console.log(data);
     ArticleService.add(data,function(err, doc){
         if(!err){
