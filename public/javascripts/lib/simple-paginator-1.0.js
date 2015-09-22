@@ -24,7 +24,9 @@
             pageNumSize = option.pageNumSize || 5,     //显示页码的个数(参数为奇数)
             conditions = option.conditions || {},       //查询条件
             callback = option.callback;                //显示页码数
-
+        if(option.totalPage == 0){
+            return ;
+        }
         //初始化
         var ul = $.fn.paginator.init();
         obj.html(ul);
