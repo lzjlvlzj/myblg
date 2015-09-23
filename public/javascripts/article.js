@@ -98,9 +98,9 @@ function getBoxHeader(item,categories){
 function getBoxBody(item,categories){
     var boxBody = $("<div class='box-body'>");
     var rowDiv = $("<div class='row'>");
-    var leftDiv = $("<div class='col-sm-4'>");
-    var rightDiv = $("<div class='col-sm-8'>");
-    var img = $("<img src='" + item.img + "'/>");
+    var leftDiv = $("<div class='col-sm-3 img-div-container'>");
+    var rightDiv = $("<div class='col-sm-9'>");
+    var img = $("<img src='" + item.img + "'class='img-responsive'/>");
     leftDiv.append(img);
     var p = $("<p>");
     p.append(item.introduction);
@@ -114,9 +114,9 @@ function getBoxBody(item,categories){
 function getBoxFooter(item,categories){
     var boxFooter = $("<div class='box-footer'>");
     var rowDiv = $("<div class='row'>");
-    var timeDiv = $("<div class='col-sm-5'>");
-    var categoryDiv = $("<div class='col-sm-5'>");
-    var visitsDiv = $("<div class='col-sm-2'>");
+    var timeDiv = $("<div class='col-sm-4 col-sm-5'>");
+    var categoryDiv = $("<div class='col-sm-5 col-sm-5'>");
+    var visitsDiv = $("<div class='col-sm-3 col-sm-2'>");
     var timeI = $("<i class='glyphicon glyphicon-calendar'>");
     var visitI = $("<i class='glyphicon glyphicon-eye-open'>");
     var categoryA = $("<a class='category' href='#'></a>");
