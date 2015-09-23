@@ -3,7 +3,7 @@
  */
 
 var SysArticle = {};
-var um = UM.getEditor('editor');
+//var um = UM.getEditor('editor');
 //var ue = UE.getEditor('editor');
 //$('#bootstrap-editor').wysiwyg();
 $(document).ready(function(){
@@ -11,6 +11,8 @@ $(document).ready(function(){
 });
 SysArticle.init = function(){
     $("#submit-btn").click(SysArticle.add);
+
+
 };
 //$("#categories")
 
@@ -20,7 +22,7 @@ SysArticle.add = function(){
     data.title = $("#title").val();
     data.introduction = $("#introduction").val();
     data.categories = $("#categories").val();
-    data.content = um.getContent();
+    data.content = $('#summernote-editor').code();
 
     var url = "/back/cms/article/add";
 
