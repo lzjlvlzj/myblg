@@ -73,6 +73,11 @@ ol, ul {
     color: #666;
 }
 
+.img-div-container  img{
+    width: 100%;
+    max-height: inherit;
+}
+
 /*
  * Component: Box
  * --------------
