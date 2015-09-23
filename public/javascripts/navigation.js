@@ -13,7 +13,6 @@ Navigation.subHead = function(coll){
         return false;
     }
     var url = window.location.pathname;
-    console.log(url);
     var ary = url.split("/");
     if(ary.length <= 4) {
         if (ary[3]) {
@@ -99,7 +98,7 @@ Navigation.getObjByUrl = function(url, coll){
 /**
  * 导航
  * */
-Navigation.list = function(){
+Navigation.list = function(isMobile){
     Navigation.all(function(resObj){
         if( resObj ){
             Navigation.coll = resObj;
