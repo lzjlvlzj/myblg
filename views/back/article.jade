@@ -2,11 +2,13 @@
    Created by GeoStar on 2015/8/26.
 
 extends back
+block scripts
+    script(src='/3part/jquery.form.js',type='text/javascript')
 block content
      div.box.box-primary
          div.box-header  文章创建页面
          div.box-body
-             form(role='form',id='articleForm')
+             form(role='form',id='articleForm',enctype="multipart/form-data")
                  div.form-group
                      label(for='categories') 分类
                      select(id='categories',name='categories').form-control
@@ -26,6 +28,17 @@ block content
                  div.form-group
                      label 简介
                      textarea(id='introduction',rows='3',name='introduction',placeholder='文章简介').form-control
+                 div.form-group
+                     label 封面
+                     div.row
+                         div.col-md-6
+                             input(type="file" id='img-file',name='image-file')
+                             input(type="hidden",name="faceImg",id="faceImg")
+                         div.col-md-4
+                             button(id="img-up-btn",type='button').btn.btn-primary 上传图片
+                         div.col-md-2
+                             span 上传状态:
+                             span#image-up-state
                  div.form-group
                      label 违章内容
                      //script(id="editor",type="text/plain",style="width: 100%;")
