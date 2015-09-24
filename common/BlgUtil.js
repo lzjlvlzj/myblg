@@ -76,6 +76,7 @@ var BlgUtil = {
         var oldPath = "";
         //开始上传
         form.on('fileBegin', function(name, file) {
+            //console.log(name, file);
             console.log("开始上传文件 : " + file.name + "... ...");
             rt.originalName = file.name;
             var ext = path.extname(file.name);

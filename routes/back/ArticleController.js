@@ -31,6 +31,7 @@ articleController.post("/article/add",function(req, res){
     var title = req.param("title");
     var introduction = req.param("introduction");
     var content = req.param("content");
+    var img = req.param("img");
     var tmp = req.param("categories");
     var t = tmp.split("-");
     var category = t[0];
@@ -41,8 +42,9 @@ articleController.post("/article/add",function(req, res){
     data.content = content;
     data.category = category;
     data.baseUrl = baseUrl;
+    data.img = img;
     //data.createDate = new Date().getTime();
-    console.log(data);
+
     ArticleService.add(data,function(err, doc){
         if(!err){
             res.json(1);
