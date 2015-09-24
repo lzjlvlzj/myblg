@@ -5,11 +5,18 @@ var express = require('express');
 var categoryController = express();
 var CategoryService = require("../../service/CategoryService");
 
+/**
+ * 新建
+ * */
+categoryController.get('/category/ui',function(req, res){
+    res.render();
+});
+
 
 /**
  * 新建
  * */
-categoryController.get('/category/new',function(req, res){
+categoryController.get('/category/add',function(req, res){
     var data = {};
     data.name = "首页";
     data.parent = "";
