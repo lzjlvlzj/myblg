@@ -1,0 +1,16 @@
+extends back
+block content
+   div.box.box-primary
+      div.box-header  用户登陆
+      div.box-body
+         form(role='form',id='loginForm' method="post" action="/back/cms/login")
+            div.form-group
+               label 用户名
+               input(id="loginName" type="text", name="loginName")
+            div.form-group
+               label 密码
+               input(id="password" type="text", name="password")
+      div.box-footer
+         button(id='submit-btn',onclick="login();").btn.btn-primary 提交
+   script(src='/javascripts/back/login.js',type='text/javascript')
+

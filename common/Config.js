@@ -24,6 +24,16 @@ var Config = {
    pagination : {
       size : 5           //每页显示5条记录
 
-   }
+   },
+   //url 过滤
+   excludeUrl : [
+      ".css",
+      ".js",
+      ".png",
+      ".jpg",
+      ".mp3",
+      "/back/cms/login/ui",
+      "/back/cms/login"
+   ]
 };
 module.exports = Config;
