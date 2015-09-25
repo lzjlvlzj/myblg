@@ -9,7 +9,7 @@ SysMood.init = function(){
 };
 SysMood.add = function(){
     var data = {};
-    data.content = $('#bootstrap-editor').html();
+    data.content = $('#content').val();
     var url = "/back/cms/mood/add";
     $.ajax({
         url:url,

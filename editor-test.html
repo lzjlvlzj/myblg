@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>编辑器测试</title>
+    <script type="text/javascript" src="public/3part/jQuery-2.1.4.min.js"></script>
+    <link rel="stylesheet" href="public/3part/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="public/3part/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+
+    <!-- include summernote css/js-->
+    <link href="public/3part/bootstrap-summernote/summernote.css" rel="stylesheet">
+    <script src="public/3part/bootstrap-summernote/summernote.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#summernote').summernote({
+                height: 200,   //set editable area's height
+                codemirror: { // codemirror options
+                    theme: 'monokai'
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="summernote" class="summernote container">Hello Summernote</div>
+</body>
+</html>
