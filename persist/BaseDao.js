@@ -122,9 +122,7 @@ BaseDao.prototype.findLast = function(model,data,callback){
 };
 
 BaseDao.prototype.update = function(model,data,callback){
-    console.log("-*-*---*-**--*--*-");
-    console.log(data);
-    console.log("-*-*---*-**--*--*-");
+
     return model.update(data.conditions,data.update,data.returnField).exec(callback);
 };
 module.exports = BaseDao;
