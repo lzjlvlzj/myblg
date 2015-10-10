@@ -85,6 +85,9 @@ Aside.findHot = function(param){
  * */
 Aside.showMood = function(resObj){
     $("#mood").empty().html(resObj.content);
+    var time = resObj.createDate;
+    time = util.date(time,"yyyy-MM-dd");
+    $("#mood-time").empty().html(time);
 };
 
 Aside.findMood = function(){
