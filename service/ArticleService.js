@@ -87,7 +87,7 @@ var ArticleService = {
         //起始位置
         data.startNum = (data.currentPage - 1) * data.size;
         //返回字段
-        data.returnField = "";
+        data.returnField = "title introduction category img visits baseUrl user createDate";
         //排序字段
         data.sortField = {createDate : -1};
         //查询菜单
