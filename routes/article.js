@@ -145,7 +145,7 @@ article.get("/:category/:sub/:id",function(req,res,next){
         if(err || !doc){
             next();
         } else {
-            res.render("articleDetail",{data:doc});
+            res.render("articleDetail",{data:doc,title : doc.title});
         }
     });
 });
