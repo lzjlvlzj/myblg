@@ -7,7 +7,6 @@ System.init = function(){
     var isMobile = util.browser.versions.mobile;
     //导航
     var obj =  $("#blog-navbar-ul").html();
-    console.log(obj);
     if(!obj){
         Navigation.list(isMobile);
     }
