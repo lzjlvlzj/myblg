@@ -2,6 +2,9 @@
 
 # 不支持IE低版本 
 
+# 效果例子
+    [http://www.itblg.com](http://www.itblg.com)
+
 # 数据初始化
 
 
