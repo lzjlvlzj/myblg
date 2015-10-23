@@ -79,19 +79,21 @@ function getBoxHeader(item,categories){
     var h4 = $("<h4>");
     var a = $("<a>");
     var id = item._id.toString();
-    a.attr("href",item.url || "#");
+    var url = item.baseUrl + "/" + id;
+    a.attr("href",url || "#");
+    a.attr("title",item.title);
     a.append(item.title);
     h4.append(a);
     title.append(h4);
-
+    /*
     var btnDiv = $("<div class='col-sm-2'>");
     var btn = $("<button class='btn btn-primary' >");
     btn.html("更多");
     btn.attr("onclick","Article.readMore('"+id+"',this);");
     btnDiv.append(btn);
-
+    */
     con.append(title);
-    con.append(btnDiv);
+    //con.append(btnDiv);
     boxHeader.append(con);
     return boxHeader;
 }

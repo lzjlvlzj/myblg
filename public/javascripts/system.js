@@ -5,12 +5,7 @@ var System = {};
 System.init = function(){
     //判断终端
     var isMobile = util.browser.versions.mobile;
-    //导航
-    var obj =  $("#blog-navbar-ul").html();
-    if(!obj){
-        Navigation.list(isMobile);
-    }
-
+    Navigation.list(isMobile);
 };
 $(document).ready(function(){
     //导航
