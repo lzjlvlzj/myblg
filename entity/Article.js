@@ -13,7 +13,7 @@ var Article = {
     baseUrl : { type : String},                                     //url = baseUrl + "/"  + id(冗余)
     user : {type : String,default : "55dfd53a618064ec22f9880b"},    //作者id
     commentNum : {type : Number, default: 0},                       //评论数(冗余)
-    createDate : { type: Number, default: (new Date() - 0) }                  //创建时间
+    createDate : { type: Number, default: (new Date() - 0) }        //创建时间
 };
 
 module.exports = Article;

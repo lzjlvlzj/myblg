@@ -54,7 +54,7 @@ SysArticle.add = function(){
     data.categories = $("#categories").val();
     data.content = $('#summernote-editor').code();
     data.img = $("#faceImg").val();
-
+    data.createDate = new Date().getTime();
     var url = "/back/cms/article/add";
 
     $.ajax({

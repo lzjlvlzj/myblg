@@ -33,6 +33,7 @@ articleController.post("/article/add",function(req, res){
     var content = req.param("content");
     var img = req.param("img");
     var tmp = req.param("categories");
+    var createDate = req.param("createDate");
     var t = tmp.split("-");
     var category = t[0];
     var baseUrl = t[1];
@@ -43,8 +44,11 @@ articleController.post("/article/add",function(req, res){
     data.category = category;
     data.baseUrl = baseUrl;
     data.img = img;
-    //data.createDate = new Date().getTime();
-
+    if(createDate){
+        data.createDate = parseInt(createDate);
+    } else {
+        data.createDate = new Date().getTime();
+    }
     ArticleService.add(data,function(err, doc){
         if(!err){
             res.json(1);
