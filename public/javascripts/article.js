@@ -97,12 +97,18 @@ function getBoxHeader(item,categories){
     boxHeader.append(con);
     return boxHeader;
 }
+
+function defaultImg(){
+    var img=event.srcElement;
+    img.src="/upload/image/default.png";
+    img.onerror=null;
+}
 function getBoxBody(item,categories){
     var boxBody = $("<div class='box-body'>");
     var rowDiv = $("<div class='row'>");
     var leftDiv = $("<div class='col-sm-3 img-div-container'>");
     var rightDiv = $("<div class='col-sm-9'>");
-    var img = $("<img src='" + item.img + "'class='img-responsive'/>");
+    var img = $("<img src='" + item.img + "'class='img-responsive' onerror='defaultImg();'/>");
     leftDiv.append(img);
     var p = $("<p>");
     p.append(item.introduction);
